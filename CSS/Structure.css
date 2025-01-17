@@ -11,6 +11,11 @@ body {
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: Green;
+}
+
 .Header {
     background: linear-gradient(to right, rgb(255, 182, 48), rgb(238, 255, 0));
     text-align: center;
@@ -38,11 +43,6 @@ body {
     color: rgb(0, 0, 0);
     width: 100%;
     padding-top: 10px;
-}
-
-.Link_Download {
-    text-decoration: none;
-    color: Green;
 }
  
 #H1_Header {
