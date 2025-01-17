@@ -40,13 +40,9 @@ body {
     padding-top: 10px;
 }
 
-.Link {
+.Link_Download {
     text-decoration: none;
     color: Green;
-}
-
-.Link:visited{
-    color: Red;
 }
  
 #H1_Header {
