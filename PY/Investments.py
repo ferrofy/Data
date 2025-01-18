@@ -27,7 +27,14 @@ Total_NFT__Investments = sum(Investments_NFT__0xt) + sum(Investments_NFT__0x0_1)
 # ______________FerroFy Total________________
 Total_FerroFy_Investments = Total_Pool_Investments + Total_Farm_Investments + Total_Brow_Investments + Total_NFT__Investments
 
-# _____________Live Collecting_______________
+# ___________Live/Past Collecting_____________
+#Past
+Past_Pool_Investments_0xt = sum(Investments_Pool_0xt)
+Past_Farm_Investments_0xt = "No Past Yet Invest More To Get Some Info :)"
+Past_Brow_Investments_0xt = "No Past Yet Invest More To Get Some Info :)"
+Past_NFT__Investments_0xt = "No Past Yet Invest More To Get Some Info :)"
+
+#Live
 Live_Pool_Investments = "Will Start Soon Stay Tuned :)"
 Live_Farm_Investments = sum(Investments_Farm_0xt)
 Live_Brow_Investments = sum(Investments_Brow_0xt)
