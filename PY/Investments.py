@@ -6,12 +6,6 @@
 # UCI =   5
 # SSX =   6
 # PPX =   7
-# ________________________________________
-
-import time
-
-print("Checking File For Code Errors...")
-
 # _________________0xt_____________________
 Investments_Pool_0xt = (510 , 610 , 20 , 20 , 0 , 0 , 0 , 0)
 Investments_Farm_0xt = [95 , 0 , 0 , 30 , 20 , 0 , 0 , 180]
@@ -102,6 +96,3 @@ PPX_Total_Pool_Investments = Investments_Pool_0xt[7] + Investments_Pool_0x0_1[7]
 PPX_Total_Farm_Investments = Investments_Farm_0xt[7] + Investments_Farm_0x0_1[7]
 PPX_Total_Brow_Investments = Investments_Brow_0xt[7] + Investments_Brow_0x0_1[7]
 PPX_Total_NFT__Investments = Investments_NFT__0xt[7] + Investments_NFT__0x0_1[7]
-
-time.sleep(2)
-print("No Errors Found In Code")
