@@ -25,14 +25,14 @@ Plan_Farm_Investments_0xt   = sum(Investments_Farm_0xt)
 Plan_Farm_Investments_0x0_1 = sum(Investments_Farm_0x0_1)
 Plan_Brow_Investments_0xt   = sum(Investments_Brow_0xt)
 Plan_Brow_Investments_0x0_1 = sum(Investments_Brow_0x_1)
-Past_NFT__Investments_0xt   = sum(Investments_NFT__0xt)
+Plan_NFT__Investments_0xt   = sum(Investments_NFT__0xt)
 Plan_NFT__Investments_0x0_1 = sum(Investments_NFT__0x0_1)
 
 # ______________Overall Total________________
 Total_Pool_Investments = Plan_Pool_Investments_0xt + Plan_Pool_Investments_0x0_1
 Total_Farm_Investments = Plan_Farm_Investments_0xt + Plan_Farm_Investments_0x0_1
 Total_Brow_Investments = Plan_Brow_Investments_0xt + Plan_Brow_Investments_0x0_1
-Total_NFT__Investments = Past_NFT__Investments_0xt + Plan_NFT__Investments_0x0_1
+Total_NFT__Investments = Plan_NFT__Investments_0xt + Plan_NFT__Investments_0x0_1
 
 # ______________FerroFy Total________________
 Total_FerroFy_Investments = Total_Pool_Investments + Total_Farm_Investments + Total_Brow_Investments + Total_NFT__Investments
