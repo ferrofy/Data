@@ -11,10 +11,6 @@
 import time
 
 print("Checking File For Code Errors...")
-def Checking_Files_Animation():
-    for i in range(1, 101):
-        print(f'\rChecked ==> {i}%', end='')
-        time.sleep(0.04)
 
 # _________________0xt_____________________
 Investments_Pool_0xt = (510 , 610 , 20 , 20 , 0 , 0 , 0 , 0)
@@ -104,9 +100,5 @@ PPX_Total_Farm_Investments = Investments_Farm_0xt[7] + Investments_Farm_0x0_1[7]
 PPX_Total_Brow_Investments = Investments_Brow_0xt[7] + Investments_Brow_0x0_1[7]
 PPX_Total_NFT__Investments = Investments_NFT__0xt[7] + Investments_NFT__0x0_1[7]
 
-time.sleep(1)
-if 1 == 1:
-    Checking_Files_Animation()
-time.sleep(1)
 print("")
 print("No Errors Found In Code")
