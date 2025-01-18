@@ -14,9 +14,9 @@ print("Checking File For Code Errors...")
 
 # _________________0xt_____________________
 Investments_Pool_0xt = (510 , 610 , 20 , 20 , 0 , 0 , 0 , 0)
-Investments_Farm_0xt = [0 , 0 , 0 , 30 , 20 , 0 , 0 , 180]
-Investments_Brow_0xt = [0 , 0 , 0 , 30 , 20 , 0 , 0 , 160]
-Investments_NFT__0xt = [0 , 0 , 0 , 20 , 10 , 0 , 0 , 160]
+Investments_Farm_0xt = [90 , 0 , 0 , 30 , 20 , 0 , 0 , 180]
+Investments_Brow_0xt = [90 , 0 , 0 , 30 , 20 , 0 , 0 , 160]
+Investments_NFT__0xt = [90 , 0 , 0 , 20 , 10 , 0 , 0 , 160]
 
 # ____________0x0 Plan - 1_________________
 Investments_Pool_0x0_1 = [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]
