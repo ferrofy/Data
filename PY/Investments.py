@@ -1,11 +1,11 @@
-# VPX = 0
+# VPX =   0
 # Tanav = 1
-# KMX = 2
-# AKX = 3
+# KMX =   2
+# AKX =   3
 # Angel = 4
-# UCI = 5
-# SSX = 6
-# PPX = 7
+# UCI =   5
+# SSX =   6
+# PPX =   7
 # ________________________________________
 
 import time
@@ -29,6 +29,9 @@ Total_Pool_Investments = sum(Investments_Pool_0xt) + sum(Investments_Pool_0x0_1)
 Total_Farm_Investments = sum(Investments_Farm_0xt) + sum(Investments_Farm_0x0_1)
 Total_Brow_Investments = sum(Investments_Brow_0xt) + sum(Investments_Brow_0x0_1)
 Total_NFT__Investments = sum(Investments_NFT__0xt) + sum(Investments_NFT__0x0_1)
+
+# ______________FerroFy Total________________
+Total_FerroFy_Investments = Total_Pool_Investments + Total_Farm_Investments + Total_Brow_Investments + Total_NFT__Investments
 
 # _____________Live Collecting_______________
 Live_Pool_Investments = "Will Start Soon Stay Tuned :)"
@@ -100,5 +103,5 @@ PPX_Total_Farm_Investments = Investments_Farm_0xt[7] + Investments_Farm_0x0_1[7]
 PPX_Total_Brow_Investments = Investments_Brow_0xt[7] + Investments_Brow_0x0_1[7]
 PPX_Total_NFT__Investments = Investments_NFT__0xt[7] + Investments_NFT__0x0_1[7]
 
-print("")
+time.sleep(2)
 print("No Errors Found In Code")
