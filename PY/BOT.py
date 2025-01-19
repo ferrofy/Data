@@ -1,4 +1,7 @@
 import time as t
+from Python_Data import Entry_Help_Exit as Long_Text
+from Python_Data import Commands as Commands
+from Python_Data import Output as Output
 
 #____________________________________________________________
 def Slow_Print(text):
@@ -8,62 +11,6 @@ def Slow_Print(text):
 def Slow_Input(Inp):
     Slow_Print(Inp)
     return input()
-#____________________________________________________________
-def Exit_All_Commands():
-    Slow_Print("OK Bye User Closing Bot Please Wait...\n")
-    t.sleep(1)
-    Slow_Print("Closing Bot In 3 Sec\n")
-    t.sleep(1)
-    Slow_Print("Closing Bot In 2 Sec\n")
-    t.sleep(1)
-    Slow_Print("Closing Bot In 1 Sec\n")
-    t.sleep(1)
-    Slow_Print("Bye User. Have A Good Day :)\n")
-    Slow_Print("Exit...")
-
-def Exit_F_Commands():
-    print("Exiting --f Command Plz W8....")
-    t.sleep(1)
-    print("Exiting --f Command In 3 Sec")
-    t.sleep(1)
-    print("Exiting --f Command In 2 Sec")
-    t.sleep(1)
-    print("Exiting --f Command In 1 Sec")
-    t.sleep(1)
-    print("exit")
-    
-def Exit_I_Commands():
-    print("Exiting --i Command Plz W8....")
-    t.sleep(1)
-    print("Exiting --i Command In 3 Sec")
-    t.sleep(1)
-    print("Exiting --i Command In 2 Sec")
-    t.sleep(1)
-    print("Exiting --i Command In 1 Sec")
-    t.sleep(1)
-    print("exit")
-    
-def Exit_T_Commands():
-    print("Exiting --t Command Plz W8....")
-    t.sleep(1)
-    print("Exiting --t Command In 3 Sec")
-    t.sleep(1)
-    print("Exiting --t Command In 2 Sec")
-    t.sleep(1)
-    print("Exiting --t Command In 1 Sec")
-    t.sleep(1)
-    print("exit")
-
-#____________________________________________________________
-All_Commands = ["--i","--f","--t"]
-F_Commands = ["--help","--exit"]
-I_Commands = ["--help","--exit"]
-T_Commands = ["--help","--exit"]
-#____________________________________________________________
-All_Commands_Help = ""
-Help_F = ""
-Help_I = "Help --i"
-Help_T = ""
 
 #____________________________________________________________
 User_Name_Input = Slow_Input("Please Enter Your Name >>> ")
@@ -75,58 +22,78 @@ Slow_Print("_______________________________________\n")
 while True:
 #Command Selection
     User_Selected_Command = Slow_Input("Which Command You Want To Use >>> ").lower().strip()
-    if User_Selected_Command in All_Commands:
+    if User_Selected_Command in Commands.All_Commands:
+        
 #____________________________________________________________
         while True:
             if User_Selected_Command == "--f":
                 User_F_Command = Slow_Input(">>> --f ").lower().strip()
-                if User_F_Command in F_Commands:
-                    if User_F_Command == "":
-                        print("")
+                if User_F_Command in Commands.F_Commands:
+                    if User_F_Command == "--rulebook" or "--infobook":
+                        Slow_Print(Output.FerroFy_RuleBook)
                     elif User_F_Command == "--help":
-                        print(Help_F)
+                        Slow_Print(Long_Text.Help_F)
                     elif User_F_Command == "--exit":
-                        Exit_F_Commands()
+                        Long_Text.Exit_F_Commands()
                         break
                     else:
-                        print("Plz Type '--help'")
+                        Slow_Print("Plz Type '--help'")
                 else:
-                    print("Plz Type '--help'")
+                    Slow_Print("Plz Type '--help'")
+                    
 #____________________________________________________________
             elif User_Selected_Command == "--i":
                 User_I_Command = Slow_Input(">>> --i ").lower().strip()
-                if User_I_Command in I_Commands:
+                if User_I_Command in Commands.I_Commands:
                     if User_I_Command == "":
-                        print("")
+                        Slow_Print("")
                     elif User_I_Command == "--help":
-                        print(Help_I)
+                        Slow_Print(Long_Text.Help_I)
                     elif User_I_Command == "--exit":
-                        Exit_I_Commands()
+                        Long_Text.Exit_I_Commands()
                         break
                     else:
-                        print("Plz Type '--help'")
+                        Slow_Print("Plz Type '--help'")
                 else:
-                    print("Plz Type '--help'")
+                    Slow_Print("Plz Type '--help'")
+
+#____________________________________________________________
+            elif User_Selected_Command == "--s":
+                User_S_Command = Slow_Input(">>> --s ").lower().strip()
+                if User_S_Command in Commands.S_Commands:
+                    if User_S_Command == "":
+                        Slow_Print("")
+                    elif User_S_Command == "--help":
+                        Slow_Print(Long_Text.Help_S)
+                    elif User_S_Command == "--exit":
+                        Long_Text.Exit_S_Commands()
+                        break
+                    else:
+                        Slow_Print("Plz Type '--help'")
+                else:
+                    Slow_Print("Plz Type '--help'")
+
 #____________________________________________________________
             elif User_Selected_Command == "--t":
                 User_T_Command = Slow_Input(">>> --t ").lower().strip()
-                if User_T_Command in T_Commands:
+                if User_T_Command in Commands.T_Commands:
                     if User_T_Command == "":
-                        print("")
+                        Slow_Print("")
                     elif User_T_Command == "--help":
-                        print(Help_T)
+                        Slow_Print(Long_Text.Help_T)
                     elif User_T_Command == "--exit":
-                        Exit_T_Commands()
+                        Long_Text.Exit_T_Commands()
                         break
                     else:
-                        print("Plz Type '--help'")
+                        Slow_Print("Plz Type '--help'")
                 else:
-                    print("Plz Type '--help'")
+                    Slow_Print("Plz Type '--help'")
+                    
 #____________________________________________________________
     elif User_Selected_Command == "--help":
-        Slow_Print(All_Commands_Help)
+        Slow_Print(Long_Text.All_Commands_Help)
     elif User_Selected_Command == "--exit":
-        Exit_All_Commands()
+        Long_Text.Exit_All_Commands()
         break
     else:
         Slow_Print("Please Select A Valid Command Or Type '--help'\n")
