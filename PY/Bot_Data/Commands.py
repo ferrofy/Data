@@ -1,5 +1,5 @@
 All_Commands = ["--f","--i","--s","--t"]
-F_Commands = ["--help","--exit","--rulebook"]
+F_Commands = ["--help","--exit","--rulebook","--infobook"]
 I_Commands = ["--help","--exit"]
 S_Commands = ["--help","--exit"]
 T_Commands = ["--help","--exit"]
