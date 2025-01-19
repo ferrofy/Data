@@ -69,15 +69,31 @@ Help_T = ""
 User_Name_Input = Slow_Input("Please Enter Your Name >>> ")
 User_Name = User_Name_Input[:20] if len(User_Name_Input) > 10 else User_Name_Input  # Trim Name Upto 20 Char :)
 Slow_Print(f"Nice To Meet You '{User_Name}'\n")
+Slow_Print("_______________________________________\n")
 
 #____________________________________________________________
 while True:
 #Command Selection
-    User_Selected_Command = Slow_Input("Which Type Of Command You Want >>> ").lower().strip()
+    User_Selected_Command = Slow_Input("Which Command You Want To Use >>> ").lower().strip()
     if User_Selected_Command in All_Commands:
-# I Command
+#____________________________________________________________
         while True:
-            if User_Selected_Command == "--i":
+            if User_Selected_Command == "--f":
+                User_F_Command = Slow_Input(">>> --f ").lower().strip()
+                if User_F_Command in F_Commands:
+                    if User_F_Command == "":
+                        print("")
+                    elif User_F_Command == "--help":
+                        print(Help_F)
+                    elif User_F_Command == "--exit":
+                        Exit_F_Commands()
+                        break
+                    else:
+                        print("Plz Type '--help'")
+                else:
+                    print("Plz Type '--help'")
+#____________________________________________________________
+            elif User_Selected_Command == "--i":
                 User_I_Command = Slow_Input(">>> --i ").lower().strip()
                 if User_I_Command in I_Commands:
                     if User_I_Command == "":
@@ -88,11 +104,25 @@ while True:
                         Exit_I_Commands()
                         break
                     else:
-                        print("Plz Bro Type '--help'")
+                        print("Plz Type '--help'")
                 else:
-                    print("Plz Bro Type '--help'")
-    # F Command
- 
+                    print("Plz Type '--help'")
+#____________________________________________________________
+            elif User_Selected_Command == "--t":
+                User_T_Command = Slow_Input(">>> --t ").lower().strip()
+                if User_T_Command in T_Commands:
+                    if User_T_Command == "":
+                        print("")
+                    elif User_T_Command == "--help":
+                        print(Help_T)
+                    elif User_T_Command == "--exit":
+                        Exit_T_Commands()
+                        break
+                    else:
+                        print("Plz Type '--help'")
+                else:
+                    print("Plz Type '--help'")
+#____________________________________________________________
     elif User_Selected_Command == "--help":
         Slow_Print(All_Commands_Help)
     elif User_Selected_Command == "--exit":
