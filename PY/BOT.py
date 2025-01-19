@@ -1,7 +1,10 @@
-import time as t
 from Python_Data import Entry_Help_Exit as Long_Text
 from Python_Data import Commands as Commands
 from Python_Data import Output as Output
+from Python_Data import Investments as Inv
+from Python_Data import Shares as Shares
+
+import time as t
 
 #____________________________________________________________
 def Slow_Print(text):
