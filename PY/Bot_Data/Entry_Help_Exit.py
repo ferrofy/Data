@@ -24,6 +24,11 @@ Help_F = """
 ____________________________________
           FerroFy Help
 ____________________________________
+>>> These Commands Tells The Basics Of FerroFy Public Details
+>>> Some Commands Are 
+
+--rulebook  => To Get Some Rules About FerroFy
+--infobook  => To Get Some Info About FerroFy
 
 """
 
