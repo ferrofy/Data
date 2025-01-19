@@ -1,11 +1,11 @@
-# VPX = 0
+# VPX =   0
 # Tanav = 1
-# KMX = 2
-# AKX = 3
+# KMX =   2
+# AKX =   3
 # Angel = 4
-# UCI = 5
-# SSX = 6
-# PPX = 7
+# UCI =   5
+# SSX =   6
+# PPX =   7
 # ________________________________________
 import Investments as Inv
 
