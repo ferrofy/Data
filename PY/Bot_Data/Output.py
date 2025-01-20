@@ -3,7 +3,7 @@ ________________________________________
       FerroFy RuleBook / InfoBook
 ________________________________________
 
->>> Gmails With '0xt' Are Test Phase Gmail & Gmail is 'heat.free.crypto@gmail.com'
+>>> Gmails With '0xt' Are Test Phase Gmail & Gmail = 'heat.free.crypto@gmail.com'
 >>> All Companys Shares Distrubution ~ Investors ==> 75% , FerroFy ==> 25%
 >>> FerroFy Shares Distribution ~ Investors ==> 75% & Public ==> 25%
 >>> More Rules Soon
