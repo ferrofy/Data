@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.Header {
+    background: linear-gradient(to right, rgb(255, 182, 48), rgb(238, 255, 0));
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.Content {
+    color: aliceblue;
+    font-size: small;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    padding-left: 50px;
+    flex-grow: 1;
+}
+
+.Footer {
+    background: linear-gradient(to right, rgb(255, 182, 48), rgb(238, 255, 0));
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+#H1_Header {
+    color: black;
+    font-weight: bold;
+}
+
+.All_Companys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+button.Company_Box {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    border: none;
+    padding: 50px 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 32px;
+    margin: 15px;
+    position: relative;
+    width: 92%;
+    max-width: 600px;
+}
+
+button.Company_Box:hover {
+    background-color: #444444;
+}
+
+.Loading_Bar_Btn {
+    position: absolute;
+    bottom: 0;
+    left: 4%;
+    right: 4%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+    width: 92%;
+}
+
+#Loading_Bar_Pool_Btn {
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+}
+
+#Loading_Bar_Farm_Btn {
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+}
+
+@media (min-width: 600px) {
+    .All_Companys {
+        flex-direction: row;
+    }
+
+    button.Company_Box {
+        width: auto;
+    }
+}
+
+.Open_Box {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.Open_Box_Content {
+    background: linear-gradient(135deg, #6e4a7e, #b197fc);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    color: white;
+}
+
+.Close_Btn {
+    font-size: 24px;
+    color: #e0e0e0;
+    background-color: red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    float: right;
+}
+
+.Loading_Bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#Loading_Bar_Pool {
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+}
+
+#Loading_Bar_Farm {
+    background: linear-gradient(90deg, rgb(255, 182, 48), rgb(238, 255, 0));
+}
+
+.Investments_Details {
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+}
