@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const popups = document.querySelectorAll('.Open_Box');
     const closeBtns = document.querySelectorAll('.Close_Btn');
 
-    const investmentPool = { VPX: 140, Tanav: 0, KMX: 0, AKX: 40, Angel: 40, UCI: 0, SSX: 0, PPX: 250 };
-    const investmentFarm = { VPX: 140, Tanav: 0, KMX: 0, AKX: 40, Angel: 30, UCI: 0, SSX: 0, PPX: 250 };
+    const investmentPool = { VPX: 50, Tanav: 0, KMX: 0, AKX: 10, Angel: 10, UCI: 0, SSX: 0, PPX: 50 };
+    const investmentFarm = { VPX: 450, Tanav: 0, KMX: 0, AKX: 70, Angel: 60, UCI: 0, SSX: 0, PPX: 450 };
     const shareRatePool = 0.2;
     const shareRateFarm = 0.45;
     const totalNeedPool = 4500;
