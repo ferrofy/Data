@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const popups = document.querySelectorAll('.Open_Box');
     const closeBtns = document.querySelectorAll('.Close_Btn');
 
-    const investmentPool = { VPX: 50, Tanav: 0, KMX: 0, AKX: 10, Angel: 10, UCI: 0, SSX: 0, PPX: 50 };
-    const investmentFarm = { VPX: 450, Tanav: 0, KMX: 0, AKX: 70, Angel: 60, UCI: 0, SSX: 0, PPX: 450 };
+    const investmentPool = { VPX: 0, Tanav: 0, KMX: 0, AKX: 0, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
+    const investmentFarm = { VPX: 750, Tanav: 0, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
     const shareRatePool = 0.2;
     const shareRateFarm = 0.45;
     const totalNeedPool = 4500;
@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
             shares[investor] = investments[investor] * shareRate / 10;
         }
         return shares;
+    };
+
+    const formatSharePercentage = (percentage) => {
+        return percentage % 1 === 0 ? `${percentage.toFixed(0)}%` : `${percentage.toFixed(2)}%`;
     };
 
     const updateLoadingBars = () => {
@@ -41,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const poolShares = calculateShares(investmentPool, shareRatePool);
         const farmShares = calculateShares(investmentFarm, shareRateFarm);
 
-        const poolSharesText = Object.entries(poolShares).map(([investor, shares]) => `${investor} = ${shares.toFixed(2)}%`).join('<br>');
-        const farmSharesText = Object.entries(farmShares).map(([investor, shares]) => `${investor} = ${shares.toFixed(2)}%`).join('<br>');
+        const poolSharesText = Object.entries(poolShares).map(([investor, shares]) => `${investor} = ${formatSharePercentage(shares)}`).join('<br>');
+        const farmSharesText = Object.entries(farmShares).map(([investor, shares]) => `${investor} = ${formatSharePercentage(shares)}`).join('<br>');
 
-        document.querySelector('#Pool .Shares_Details').innerHTML = `<b>Shares</b><br>${poolSharesText}<br>FerroFy = 4%`;
-        document.querySelector('#Farm .Shares_Details').innerHTML = `<b>Shares</b><br>${farmSharesText}<br>FerroFy = 5%`;
+        document.querySelector('#Pool .Shares_Details').innerHTML = `<b style="color:red; font-size:2em;">Shares</b><br>${poolSharesText}<br>FerroFy = 5%<br>`;
+        document.querySelector('#Farm .Shares_Details').innerHTML = `<b style="color:red; font-size:2em;">Shares</b><br>${farmSharesText}<br>FerroFy = 5.5%<br>`;
 
-        document.querySelector('#Pool .Investments_Details').innerHTML = `<b>Investments</b><br>${Object.entries(investmentPool).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}`;
-        document.querySelector('#Farm .Investments_Details').innerHTML = `<b>Investments</b><br>${Object.entries(investmentFarm).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}`;
+        document.querySelector('#Pool .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(investmentPool).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
+        document.querySelector('#Farm .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(investmentFarm).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
 
         document.querySelector('#Pool .Share_Rates').innerHTML = `<b>Share Rate:</b> Pool = ₹${shareRatePool} Per 10`;
         document.querySelector('#Farm .Share_Rates').innerHTML = `<b>Share Rate:</b> Farm = ₹${shareRateFarm} Per 10`;
