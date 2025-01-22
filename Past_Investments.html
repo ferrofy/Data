@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Investments</title>
+    <link rel="icon" href="IMG/Favicon.png" type="image/png">
+    <link rel="stylesheet" href="CSS/Past_Investments.css">
+    <link rel="stylesheet" href="CSS/Structure.css">
+</head>
+
+<body>
+    <div class="Header">
+        <h1 id="H1_Header">Past Investments</h1>
+    </div>
+
+    <div class="Content">
+        <div class="All_Companys">
+            <div class="Plan">
+                <h1 class="Stylish_Heding">0x0 Plan 1</h1>
+                <p class="Coming_Soon">Coming Soon</p>
+            </div>
+            <div class="Plan">
+                <h1 class="Stylish_Heding">0xt</h1>
+                <div class="Button_Container">
+                    <button id="Pool_Button" class="Company_Box" data-popup="Pool">Pool</button>
+                    <button id="Farm_Button" class="Company_Box" data-popup="Farm">Farm</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Pool_Popup" class="Open_Box">
+            <div class="Open_Box_Content">
+                <span class="Close_Btn">&times;</span>
+                <h2>Pool</h2>
+                <p class="Date_Range"><span class="Date_Label">Start Date:</span>
+                    <span class="Date_Value">7/Dec/2024</span></p>
+                <p class="Date_Range"><span class="Date_Label">End Date:</span>
+                    <span class="Date_Value">7/Mar/2024</span></p>
+                <div id="Pool_Date_Progress_Bar"></div>
+                <p class="Investments_Details"></p>
+                <p class="Shares_Details"></p>
+            </div>
+        </div>
+        <div id="Farm_Popup" class="Open_Box">
+            <div class="Open_Box_Content">
+                <span class="Close_Btn">&times;</span>
+                <h2>Farm</h2>
+                <p class="Investments_Details"></p>
+                <p class="Shares_Details"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="Footer">
+        <h1>Thank You User</h1>
+    </div>
+    <script src="Past_Investments.js"></script>
+</body>
+
+</html>
