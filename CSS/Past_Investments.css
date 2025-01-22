@@ -1,0 +1,136 @@
+.Stylish_Heding {
+    font-family: 'Courier New', Courier, monospace;
+    color: #ff5722;
+}
+
+.Coming_Soon {
+    font-style: italic;
+    color: #ff5722;
+}
+
+.All_Companys {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.Plan {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.Button_Container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+button.Company_Box {
+    background-color: #2b2b2b;
+    color: #eceff1;
+    border: none;
+    padding: 24px 90px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 15px 0;
+    position: relative;
+    max-width: 270px;
+    width: 90%;
+}
+
+button.Company_Box:hover {
+    background: linear-gradient(90deg, #90ff08, #cdff05);
+    color: #000000;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .Button_Container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button.Company_Box {
+        width: 81%;
+    }
+}
+
+.Open_Box {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.Open_Box_Content {
+    background: #263238;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+}
+
+.Close_Btn {
+    font-size: 24px;
+    color: #eceff1;
+    background-color: #ff5252;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    float: right;
+}
+
+.Investments_Details,
+.Shares_Details {
+    color: #ffffff;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.Date_Range {
+    margin-top: 10px;
+}
+
+.Date_Label {
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.Date_Value {
+    color: #ffffff;
+}
+
+#Pool_Date_Progress_Bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    button.Company_Box {
+        width: 90%;
+    }
+}
