@@ -1,0 +1,17 @@
+.Btn {
+  font-size: 24px;
+  padding: 15px 30px;
+  color: #000000;
+  background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  align-self: center;
+}
+
+.Btn:hover {
+  background: linear-gradient(90deg, #ab47bc, #ef5350, #66bb6a, #26c6da);
+  color: #FFFFFF;
+}
