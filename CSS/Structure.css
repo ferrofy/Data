@@ -13,15 +13,61 @@ a {
     text-decoration: none;
     color: #00c853;
 }
+@keyframes Moving_Color_Header {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes Moving_Color_Footer {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 
 .Header {
     background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc);
+    background-size: 400% 400%;
+    animation: Moving_Color_Header 7s ease infinite;
     text-align: center;
     margin-top: 0;
     position: relative;
     width: 100%;
     padding-top: 10px;
 }
+
+.Footer {
+    background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc);
+    background-size: 400% 400%;
+    animation: Moving_Color_Footer 7s ease infinite;
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    color: #000000;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.Header:hover {
+    animation-play-state: paused;
+}
+
+.Footer:hover {
+    animation-play-state: paused;
+}
+
 
 .Content {
     color: #eceff1;
@@ -31,16 +77,6 @@ a {
     text-align: left;
     padding: 20px;
     padding-left: 50px;
-}
-
-.Footer {
-    background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc);
-    text-align: center;
-    margin-top: 0;
-    position: relative;
-    color: #000000;
-    width: 100%;
-    padding-top: 10px;
 }
 
 #H1_Header {
