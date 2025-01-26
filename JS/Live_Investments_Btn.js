@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtns = document.querySelectorAll('.Close_Btn');
 
     const investmentPool = { VPX: 0, Tanav: 0, KMX: 0, AKX: 0, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
-    const investmentFarm = { VPX: 750, Tanav: 0, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
+    const investmentFarm = { VPX: 900, Tanav: 0, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
     const shareRatePool = 0.2;
     const shareRateFarm = 0.45;
     const totalNeedPool = 4500;
