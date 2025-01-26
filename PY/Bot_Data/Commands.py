@@ -1,5 +1,0 @@
-All_Commands = ["--f","--i","--s","--t","--rulebook","--infobook"]
-F_Commands = ["--help","--exit"]
-I_Commands = ["--help","--exit"]
-S_Commands = ["--help","--exit"]
-T_Commands = ["--help","--exit"]
