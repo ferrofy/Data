@@ -1,0 +1,97 @@
+
+.All_Companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Plan {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+button.Company_Box {
+    background-color: #2b2b2b;
+    color: #eceff1;
+    border: none;
+    padding: 50px 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 32px;
+    margin: 15px;
+    position: relative;
+    width: 92%;
+    max-width: 600px;
+}
+
+button.Company_Box:hover {
+    background: linear-gradient(90deg, #90ff08, #cdff05);
+    color: #000000;
+    font-weight: bold;
+}
+
+#Pool,
+#Farm,
+#FerroFy {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.Open_Box_Content {
+    background: #263238;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    color: white;
+}
+
+.Close_Btn {
+    font-size: 24px;
+    color: #eceff1;
+    background-color: #ff5252;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    float: right;
+}
+
+@media (min-width: 600px) {
+    .All_Companies {
+        flex-direction: row;
+    }
+
+    .Plan {
+        width: auto;
+    }
+
+    #Small_Text {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .All_Companies {
+        flex-direction: column;
+    }
+
+    #Small_Text {
+        margin-top: 15px;
+    }
+}
