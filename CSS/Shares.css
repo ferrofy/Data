@@ -1,3 +1,20 @@
+.Parent_Company {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Parent_Company h1 {
+    color: #eceff1;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.Parent_Company .Company_Box {
+    margin: 0 auto;
+    /* Center the button */
+    width: 92%;
+    max-width: 600px;
+}
 
 .All_Companies {
     display: flex;
@@ -78,20 +95,10 @@ button.Company_Box:hover {
     .Plan {
         width: auto;
     }
-
-    #Small_Text {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-    }
 }
 
 @media (max-width: 600px) {
     .All_Companies {
         flex-direction: column;
-    }
-
-    #Small_Text {
-        margin-top: 15px;
     }
 }
