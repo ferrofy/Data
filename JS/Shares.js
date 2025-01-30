@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const planPool0xt = { VPX: 510, Tanav: 610, KMX: 20, AKX: 20, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
-    const planFarm0xt = { VPX: 100, Tanav: 100, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
+    const planFarm0xt = { VPX: 0, Tanav: 0, KMX: 0, AKX: 0, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
 
 
     const Total_Pool_Investments = Object.values(planPool0xt).reduce((sum, value) => sum + value, 0);
