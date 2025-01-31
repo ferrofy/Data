@@ -1,79 +1,77 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const openPopupBtns = document.querySelectorAll('.Company_Box');
-    const popups = document.querySelectorAll('.Open_Box');
-    const closeBtns = document.querySelectorAll('.Close_Btn');
+const planPool0xt = { VPX: 510, Tanav: 610, KMX: 20, AKX: 20, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
+const planFarm0xt = { VPX: 291, Tanav: 291, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
 
-    
-    const colors = {
-        user: 'yellow', 
-        percentage: 'red',
+const colors = {
+    nameColor: "yellow",
+    ffxTextColor: "white",
+    ffxLabelColor: "red",
+    backgroundColor: "#1d1f21",
+    textColor: "#eceff1",
+    accentColor: "#39ff14",
+    finalTextColor: "cyan",
+    suffixColor: "cyan"
+};
+
+const formatNumber = (num) => {
+    if (num >= 10000000) {
+        return (num / 10000000).toFixed(7) + ' <span style="color: ${colors.suffixColor}">Cr</span>';
+    } else if (num >= 100000) {
+        return (num / 100000).toFixed(5) + ' <span style="color: ${colors.suffixColor}">L</span>';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(3) + ' <span style="color: ${colors.suffixColor}">K</span>';
+    } else {
+        return num.toString();
+    }
+};
+
+const updateLandingPage = () => {
+    const investmentsContent = document.getElementById('investmentsContent');
+    const totalFerroFyInvestments = calculateTotalInvestments();
+    const FFXRate = 0.0000001;
+
+    const calculateFFX = (investment) => {
+        const share = (investment / totalFerroFyInvestments) * 75;
+        return formatNumber(Math.floor(share / FFXRate));
     };
 
-    const planPool0xt = { VPX: 510, Tanav: 610, KMX: 20, AKX: 20, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
-    const planFarm0xt = { VPX: 0, Tanav: 0, KMX: 0, AKX: 0, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
+    let delay = 0;
+    let firstPerson = true;
 
+    const shareAnimation = ["Calculating", "Calculating.", "Calculating..", "Calculating..."];
 
-    const Total_Pool_Investments = Object.values(planPool0xt).reduce((sum, value) => sum + value, 0);
-    const Total_Farm_Investments = Object.values(planFarm0xt).reduce((sum, value) => sum + value, 0);
-    const Total_FerroFy_Investments = Total_Pool_Investments + Total_Farm_Investments;
+    for (const person in planPool0xt) {
+        setTimeout(() => {
+            investmentsContent.innerHTML += `<p style="color: ${colors.nameColor}" id="${person}">${person}: ${shareAnimation[0]}</p>`;
+        }, delay);
 
+        delay += 500;
 
-    const calculateShares = (userInvestments, totalInvestments) => {
-        return ((userInvestments * 100) / totalInvestments).toFixed(8).replace(/\.?0+$/, '');
-    };
-
-
-    const formatOutput = (user, poolShare, farmShare, ferroFyShare, popupId) => {
-        let percentage;
-        if (popupId === 'Pool') {
-            percentage = poolShare;
-        } else if (popupId === 'Farm') {
-            percentage = farmShare;
-        } else if (popupId === 'FerroFy') {
-            percentage = ferroFyShare;
+        for (let i = 1; i < shareAnimation.length; i++) {
+            setTimeout(() => {
+                document.getElementById(person).innerHTML = `${person}: ${shareAnimation[i]}`;
+            }, delay);
+            delay += 500;
         }
 
-        return `<span style="color: ${colors.user};">${user}</span> - <span style="color: ${colors.percentage};">${percentage}</span>%<br>`;
-    };
+        setTimeout(() => {
+            const ffxValue = calculateFFX(planPool0xt[person] + planFarm0xt[person]);
+            document.getElementById(person).innerHTML = `${person}: <span style="color: ${colors.ffxTextColor}">${ffxValue} <span style="color: ${colors.ffxLabelColor}">FFX</span></span>`;
+        }, delay);
 
-    // Generate shares details based on popup type
-    const generateSharesDetails = (popupId) => {
-        let sharesDetails = '';
-        for (const user in planPool0xt) {
-            const User_Total_Pool_Investments = planPool0xt[user];
-            const User_Total_Farm_Investments = planFarm0xt[user];
-            const User_Total_FerroFy_Investments = User_Total_Pool_Investments + User_Total_Farm_Investments;
+        delay += 500;
+    }
 
-            const User_Shares_Pool = calculateShares(User_Total_Pool_Investments, Total_Pool_Investments);
-            const User_Shares_Farm = calculateShares(User_Total_Farm_Investments, Total_Farm_Investments);
-            const User_FerroFy_Pool = calculateShares(User_Total_FerroFy_Investments, Total_FerroFy_Investments);
+    setTimeout(() => {
+        investmentsContent.innerHTML += `<p style="color: ${colors.finalTextColor}">1 FFX = 0.0000001% Of FerroFy</p>`;
+    }, delay);
+};
 
-            sharesDetails += formatOutput(user, User_Shares_Pool, User_Shares_Farm, User_FerroFy_Pool, popupId);
-        }
-        return sharesDetails;
-    };
+const calculateTotalInvestments = () => {
+    const totalPool = Object.values(planPool0xt).reduce((sum, val) => sum + val, 0);
+    const totalFarm = Object.values(planFarm0xt).reduce((sum, val) => sum + val, 0);
+    return totalPool + totalFarm;
+};
 
-    // Attach event listeners
-    openPopupBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const popupId = btn.getAttribute('data-popup');
-            const popup = document.getElementById(popupId);
-            popup.style.display = 'flex';
-            popup.querySelector('.Shares_Details').innerHTML = generateSharesDetails(popupId);
-        });
-    });
-
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.closest('.Open_Box').style.display = 'none';
-        });
-    });
-
-    window.addEventListener('click', (e) => {
-        popups.forEach(popup => {
-            if (e.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
-    });
-});
+window.onload = () => {
+    updateLandingPage();
+};
