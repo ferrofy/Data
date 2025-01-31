@@ -84,3 +84,8 @@ a {
   box-sizing: border-box;
   gap: 15px;
 }
+
+hr {
+  width: 100%;
+  border: 1px solid orange;
+}
