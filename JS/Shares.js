@@ -14,11 +14,11 @@ const colors = {
 
 const formatNumber = (num) => {
     if (num >= 10000000) {
-        return (num / 10000000).toFixed(7) + ' <span style="color: ${colors.suffixColor}">Cr</span>';
+        return (num / 10000000).toFixed(7) + ' <span style="color: ${colors.suffixColor}"> Cr </span>';
     } else if (num >= 100000) {
-        return (num / 100000).toFixed(5) + ' <span style="color: ${colors.suffixColor}">L</span>';
+        return (num / 100000).toFixed(5) + ' <span style="color: ${colors.suffixColor}"> La </span>';
     } else if (num >= 1000) {
-        return (num / 1000).toFixed(3) + ' <span style="color: ${colors.suffixColor}">K</span>';
+        return (num / 1000).toFixed(3) + ' <span style="color: ${colors.suffixColor}"> Th </span>';
     } else {
         return num.toString();
     }
