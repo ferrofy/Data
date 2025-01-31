@@ -3,22 +3,25 @@ const planFarm0xt = { VPX: 291, Tanav: 291, KMX: 0, AKX: 80, Angel: 70, UCI: 0, 
 
 const colors = {
     nameColor: "yellow",
-    ffxTextColor: "white",
+    ffxTextColor: "#39ff14",
     ffxLabelColor: "red",
     backgroundColor: "#1d1f21",
-    textColor: "#eceff1",
+    textColor: "white",
     accentColor: "#39ff14",
     finalTextColor: "cyan",
-    suffixColor: "cyan"
+    suffixColor: "darkpink",
+    noteColor: "white"
 };
+
+const Animation_Delay = 15;
 
 const formatNumber = (num) => {
     if (num >= 10000000) {
-        return (num / 10000000).toFixed(7) + ' <span style="color: ${colors.suffixColor}"> Cr </span>';
+        return (num / 10000000).toFixed(7) + ' Cr';
     } else if (num >= 100000) {
-        return (num / 100000).toFixed(5) + ' <span style="color: ${colors.suffixColor}"> La </span>';
+        return (num / 100000).toFixed(5) + ' La';
     } else if (num >= 1000) {
-        return (num / 1000).toFixed(3) + ' <span style="color: ${colors.suffixColor}"> Th </span>';
+        return (num / 1000).toFixed(3) + ' Th';
     } else {
         return num.toString();
     }
@@ -35,30 +38,54 @@ const updateLandingPage = () => {
     };
 
     let delay = 0;
-    let firstPerson = true;
 
-    const shareAnimation = ["Calculating", "Calculating.", "Calculating..", "Calculating..."];
+    const shareAnimation = [];
+
+    for (let i = 0; i <= 100; i++) {
+        let dots = ''.repeat(i % 3 + 1);
+        let hashes = '#'.repeat(Math.floor(i / 10));
+        let spaces = ' '.repeat(10 - hashes.length);
+        let percentage = `${i}%`;
+
+        shareAnimation.push(`Calculating... ${dots} [${hashes}${spaces}] ${percentage}`);
+    }
+
+    console.log(shareAnimation);
+
 
     for (const person in planPool0xt) {
         setTimeout(() => {
             investmentsContent.innerHTML += `<p style="color: ${colors.nameColor}" id="${person}">${person}: ${shareAnimation[0]}</p>`;
         }, delay);
 
-        delay += 500;
+        delay += Animation_Delay;
 
         for (let i = 1; i < shareAnimation.length; i++) {
             setTimeout(() => {
                 document.getElementById(person).innerHTML = `${person}: ${shareAnimation[i]}`;
             }, delay);
-            delay += 500;
+            delay += Animation_Delay;
         }
 
         setTimeout(() => {
             const ffxValue = calculateFFX(planPool0xt[person] + planFarm0xt[person]);
-            document.getElementById(person).innerHTML = `${person}: <span style="color: ${colors.ffxTextColor}">${ffxValue} <span style="color: ${colors.ffxLabelColor}">FFX</span></span>`;
+            let suffix = '';
+            if (ffxValue.includes('Cr')) {
+                suffix = 'Cr';
+            } else if (ffxValue.includes('La')) {
+                suffix = 'La';
+            } else if (ffxValue.includes('Th')) {
+                suffix = 'Th';
+            }
+            const formattedValue = ffxValue.replace(suffix, '').trim();
+            document.getElementById(person).innerHTML =
+                `<span style="color: ${colors.nameColor}">${person}</span> : 
+                <span style="color: ${colors.textColor}">${formattedValue}</span> 
+                <span style="color: ${colors.ffxLabelColor}">${suffix}</span> 
+                <span style="color: ${colors.ffxTextColor}">FFX</span>`;
         }, delay);
 
-        delay += 500;
+        delay += Animation_Delay;
     }
 
     setTimeout(() => {
