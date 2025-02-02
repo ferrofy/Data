@@ -1,0 +1,52 @@
+
+table {
+  border-collapse: collapse;
+  width: calc(100% - 100px);
+  margin: 20px auto;
+  table-layout: fixed;
+}
+
+table,
+th,
+td {
+  border: 1px solid #39ff14;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+tr:hover {
+  background-color: #444;
+}
+
+caption {
+  margin: 10px;
+  color: #39ff14;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+
+  th,
+  td {
+    white-space: normal;
+  }
+}
