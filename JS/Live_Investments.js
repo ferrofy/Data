@@ -1,4 +1,4 @@
-import { Pool_0x0_Plan_1, Farm_0xt, Share_Rate_Pool, Total_Need_Pool, Total_Need_Farm } from './Investment_Data.js';
+import { Pool_0x0_Plan_1, Farm_0xt, Share_Rate_Pool, Total_Need_Pool, Total_Need_Farm } from './Investments_Data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const openPopupBtns = document.querySelectorAll('.Company_Box');
