@@ -1,15 +1,10 @@
+import { Pool_0x0_Plan_1 , Farm_0xt ,Share_Rate_Pool, Total_Need_Pool,Total_Need_Farm} from './Investment_Data.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const openPopupBtns = document.querySelectorAll('.Company_Box');
     const popups = document.querySelectorAll('.Open_Box');
     const closeBtns = document.querySelectorAll('.Close_Btn');
-
-    const investmentPool = { VPX: 0, Tanav: 0, KMX: 0, AKX: 0, Angel: 0, UCI: 0, SSX: 0, PPX: 0 };
-    const investmentFarm = { VPX: 460, Tanav: 460, KMX: 0, AKX: 80, Angel: 70, UCI: 0, SSX: 0, PPX: 500 };
-    const shareRatePool = 0.2;
-    const shareRateFarm = 0.45;
-    const totalNeedPool = 4500;
-    const totalNeedFarm = 2100;
-
+    
     const calculateFillPercentage = (currentInvestments, totalNeeded) => {
         let totalCurrent = Object.values(currentInvestments).reduce((a, b) => a + b, 0);
         return (totalCurrent / totalNeeded) * 100;
@@ -23,13 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return shares;
     };
 
+    const calculateFarmShares = (investments) => {
+        const totalInvested = Object.values(investments).reduce((a, b) => a + b, 0);
+        const shares = {};
+        for (let investor in investments) {
+            shares[investor] = (investments[investor] * 100 / totalInvested).toFixed(2);
+        }
+        return shares;
+    };
+
     const formatSharePercentage = (percentage) => {
         return percentage % 1 === 0 ? `${percentage.toFixed(0)}%` : `${percentage.toFixed(2)}%`;
     };
 
     const updateLoadingBars = () => {
-        const poolFillPercentage = calculateFillPercentage(investmentPool, totalNeedPool);
-        const farmFillPercentage = calculateFillPercentage(investmentFarm, totalNeedFarm);
+        const poolFillPercentage = calculateFillPercentage(Pool_0x0_Plan_1, Total_Need_Pool);
+        const farmFillPercentage = calculateFillPercentage(Farm_0xt, Total_Need_Farm);
 
         document.getElementById('Loading_Bar_Pool').style.width = `${poolFillPercentage}%`;
         document.getElementById('Loading_Bar_Farm').style.width = `${farmFillPercentage}%`;
@@ -42,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateSharesInfo = () => {
-        const poolShares = calculateShares(investmentPool, shareRatePool);
-        const farmShares = calculateShares(investmentFarm, shareRateFarm);
+        const poolShares = calculateShares(Pool_0x0_Plan_1, Share_Rate_Pool);
+        const farmShares = calculateFarmShares(Farm_0xt);
 
         const poolSharesText = Object.entries(poolShares).map(([investor, shares]) => `${investor} = ${formatSharePercentage(shares)}`).join('<br>');
         const farmSharesText = Object.entries(farmShares).map(([investor, shares]) => `${investor} = ${formatSharePercentage(shares)}`).join('<br>');
@@ -51,11 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#Pool .Shares_Details').innerHTML = `<b style="color:red; font-size:2em;">Shares</b><br>${poolSharesText}<br>FerroFy = 5%<br>`;
         document.querySelector('#Farm .Shares_Details').innerHTML = `<b style="color:red; font-size:2em;">Shares</b><br>${farmSharesText}<br>FerroFy = 5.5%<br>`;
 
-        document.querySelector('#Pool .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(investmentPool).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
-        document.querySelector('#Farm .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(investmentFarm).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
-
-        document.querySelector('#Pool .Share_Rates').innerHTML = `<b>Share Rate:</b> Pool = ₹${shareRatePool} Per 10`;
-        document.querySelector('#Farm .Share_Rates').innerHTML = `<b>Share Rate:</b> Farm = ₹${shareRateFarm} Per 10`;
+        document.querySelector('#Pool .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(Pool_0x0_Plan_1).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
+        document.querySelector('#Farm .Investments_Details').innerHTML = `<b style="color:red; font-size:2em;">Investments</b><br>${Object.entries(Farm_0xt).map(([investor, amount]) => `${investor} = ₹${amount}`).join('<br>')}<br>`;
     };
 
     openPopupBtns.forEach(btn => {
