@@ -30,7 +30,7 @@ const formatNumber = (num) => {
 const updateLandingPage = () => {
     const investmentsContent = document.getElementById('investmentsContent');
     const totalFerroFyInvestments = calculateTotalInvestments();
-    const FFXRate = 0.0000001;
+    const FFXRate = 0.000001;
 
     const calculateFFX = (investment) => {
         const share = (investment / totalFerroFyInvestments) * 75;
