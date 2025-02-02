@@ -89,7 +89,7 @@ const updateLandingPage = () => {
     }
 
     setTimeout(() => {
-        investmentsContent.innerHTML += `<p style="color: ${colors.finalTextColor}">1 FFX = 0.0000001% Of FerroFy</p>`;
+        investmentsContent.innerHTML += `<p style="color: ${colors.finalTextColor}">1 FFX = ${FFXRate}% Of FerroFy</p>`;
     }, delay);
 };
 
