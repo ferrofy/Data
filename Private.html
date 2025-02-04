@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FerroFy</title>
     <link rel="icon" href="IMG/Favicon.png" type="image/png">
-    <link rel="stylesheet" href="CSS/Multi_Pages/Structure.css">
+    <link rel="stylesheet" href="Private/CSS/Private_Structure.css">
 </head>
 
 <body>
@@ -15,9 +15,19 @@
     </div>
 
     <div class="Content">
-
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Are You Trusted User?" class="password-box">
+            <button onclick="togglePasswordVisibility()" class="eye-button">👁️</button>
+        </div>
+        <button onclick="checkPassword()" class="submit-button">Submit</button>
+        <div id="privateContent" style="display: none;">
+            <h2>Private Content</h2>
+            <p>This content is protected by a password.</p>
+        </div>
     </div>
-<script src="JS/"></script>
+
+    <script src="Private/JS/Passwords.js"></script>
+
     <div class="Footer">
         <h1>Thank You User</h1>
     </div>
