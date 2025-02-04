@@ -7,3 +7,6 @@ document.getElementById('Go_To_Past_Investments').addEventListener('click', func
 document.getElementById('Go_To_Shares').addEventListener('click', function() {
   window.location.href = 'https://ferrofy.github.io/Data/Shares';
 });
+document.getElementById('Go_To_Private_Page').addEventListener('click', function() {
+  window.location.href = 'https://ferrofy.github.io/Data/Private';
+});
