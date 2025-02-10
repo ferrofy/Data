@@ -14,82 +14,32 @@
         <h1 id="H1_Header">Shares</h1>
     </div>
 
-    <div class="content">
-        <table id="sharesTable">
-            <caption style="color: #39ff14;">FFX Per User</caption>
-            <thead>
-                <tr>
-                    <th style="color: cyan;">User</th>
-                    <th style="color: cyan;">Shares</th>
-                    <th style="color: cyan;">Multiplier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated by JavaScript -->
-            </tbody>
-        </table>
+    <div class="content" style="text-align: center; margin-top: 20px;">
+        <canvas id="pieChart" width="300" height="300"></canvas>
     </div>
 
     <div class="content">
-        <table id="combinedTable">
-            <caption style="color: #39ff14;">Shares Distribution</caption>
-            <thead>
-                <tr>
-                    <th style="color: cyan;">Type</th>
-                    <th style="color: cyan;">Amount</th>
-                    <th style="color: cyan;">Multiplier</th>
-                </tr>
-            </thead>
+        <table id="totalInvestedTable">
+            <caption style="color: #39ff14;">Shares Given On Amount</caption>
+<thead>
+    <tr>
+        <th style="color: #ff1493;">User</th>
+        <th style="color: #ff1493;">Total Amount (₹)</th>
+        <th style="color: #ff1493;">Percentage (%)</th>
+    </tr>
+</thead>
+
             <tbody>
-                <!-- Rows will be populated by JavaScript -->
             </tbody>
         </table>
     </div>
-
-    <div class="content">
-        <table id="ffxPercentageTable">
-            <caption style="color: #39ff14;">% Per FFX</caption>
-            <thead>
-                <tr>
-                    <th style="color: cyan;">Amount</th>
-                    <th style="color: cyan;">%</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="color: #ffff00;">1 FFX</td>
-                    <td style="color: white;">0.001%</td>
-                </tr>
-                <tr>
-                    <td style="color: #ffff00;">10 FFX</td>
-                    <td style="color: white;">0.01%</td>
-                </tr>
-                <tr>
-                    <td style="color: #ffff00;">100 FFX</td>
-                    <td style="color: white;">0.1%</td>
-                </tr>
-                <tr>
-                    <td style="color: #ffff00;">1 Th FFX</td>
-                    <td style="color: white;">1%</td>
-                </tr>
-                <tr>
-                    <td style="color: #ffff00;">10 Th FFX</td>
-                    <td style="color: white;">10%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <hr>
-    <strong style="color: white;">Note - Final Shares Will be Distributed On 7 Dec 2026 📅✨</strong>
-    <hr>
-    <strong style="color: white;">Note - 25% Shares for Public Listing on 7 Dec 2026 📅✨</strong>
 
     <div class="Footer">
-        <h1>Thank You, User</h1>
+        <h1>Thank You User</h1>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="JS/Shares.js"></script>
-</body>
+</body> 
 
 </html>
